@@ -1,3 +1,3 @@
 
-export {default as ApogeeWebView} from "/apogeewebview/ApogeeWebView.js";
+export {default as ApogeeWebView} from "/apogeejs-webview-lib/src/ApogeeWebView.js";
 

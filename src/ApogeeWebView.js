@@ -1,10 +1,10 @@
 /** This replaces ApogeeView when running a client web application. */
-import {Apogee} from "/apogeeapp/apogeeAppLib.js";
-import WebComponentDisplay from "/apogeewebview/componentdisplay/WebComponentDisplay.js";
-import {getComponentViewClass,ERROR_COMPONENT_VIEW_CLASS} from "/apogeeview/componentViewInfo.js";
-import UiCommandMessenger from "/apogeeview/commandseq/UiCommandMessenger.js";
-import WebAppConfigManager from "/apogeewebview/WebAppConfigManager.js";
-import {closeWorkspace} from "/apogeeview/commandseq/closeworkspaceseq.js";
+import {Apogee} from "/apogeejs-app-lib/src/apogeeAppLib.js";
+import WebComponentDisplay from "/apogeejs-webview-lib/src/componentdisplay/WebComponentDisplay.js";
+import {getComponentViewClass,ERROR_COMPONENT_VIEW_CLASS} from "/apogeejs-view-lib/src/componentViewInfo.js";
+import UiCommandMessenger from "/apogeejs-view-lib/src/commandseq/UiCommandMessenger.js";
+import WebAppConfigManager from "/apogeejs-webview-lib/src/WebAppConfigManager.js";
+import {closeWorkspace} from "/apogeejs-view-lib/src/commandseq/closeworkspaceseq.js";
 
 export default class ApogeeWebView {
 

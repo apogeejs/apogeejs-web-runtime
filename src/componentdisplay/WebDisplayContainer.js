@@ -1,5 +1,5 @@
 import {uiutil,bannerConstants,getBanner} from "/apogeejs-ui-lib/src/apogeeUiLib.js";
-import {getSaveBar} from "/apogeejs-view-lib/src/componentdisplay/toolbar.js";
+import {getSaveBar} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 
 /** This is a standin for the display conatiner for the literate page
  * 

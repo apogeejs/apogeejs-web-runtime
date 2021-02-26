@@ -1,5 +1,5 @@
 import {uiutil} from "/apogeejs-ui-lib/src/apogeeUiLib.js";
-import WebDisplayContainer from "/apogeejs-webview-lib/src/componentdisplay/WebDisplayContainer.js";
+import WebDisplayContainer from "/apogeejs-web-runtime/src/componentdisplay/WebDisplayContainer.js";
 
 /** This is the component display for a web page.
  * NOTES:

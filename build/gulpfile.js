@@ -89,7 +89,7 @@ const CSS_FILES = [
     "../ext/handsontable/handsontable_6.2.0/handsontable.full.min.css"
 ]
 
-const CSS_BUNDLE_FILENAME = "cssBundle.css";
+const CSS_BUNDLE_FILENAME = "apogeeAppBundle.css";
 
 function packageCssTask() {
     return src(CSS_FILES)

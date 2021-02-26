@@ -7,7 +7,8 @@
         "apogeejs-model-lib": {"version": "2.0.0-p1", "isProductionRelease": false},
         "apogeejs-app-lib": {"version": "2.0.0-p1", "isProductionRelease": false},
         "apogeejs-ui-lib": {"version": "2.0.0-p1", "isProductionRelease": false},
-        "apogeejs-view-lib": {"version": "2.0.0-p1", "isProductionRelease": false}
+        "apogeejs-view-lib": {"version": "2.0.0-p1", "isProductionRelease": false},
+        "apogeejs-app-bundle": {"version": "2.0.0-p1", "isProductionRelease": false}
     },
     "buildInfoUrl": "/apogeejs-web-runtime/buildInfo.json"
 }

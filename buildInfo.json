@@ -19,6 +19,18 @@
                 "childFolder": "web"
             },
             {
+                "type": "copyAndReplace",
+                "srcFileUrl": "/apogeejs-web-runtime/src/bundleVersion.js",
+                "childFolder": "src",
+                "replacementList": [
+                    {
+                        "marker": "[APOGEE_BUNDLE_PATH]",
+                        "lib": "apogeejs-app-bundle",
+                        "type": "deployPath"
+                    }
+                ]
+            },
+            {
                 "type": "concatFileList",
                 "srcFileUrlList": [
                     "/apogeejs-view-lib/style/apogeeapp.css",
@@ -40,7 +52,10 @@
             },
             {
                 "type": "packageLib",
-                "esModuleFileName": "apogeeWebRuntime.js"
+                "esModuleFileName": "apogeeWebRuntime.js",
+                "externalLibs": [
+                    "./bundleVersion.js"
+                ]
             }
         ]
     }

@@ -8,7 +8,6 @@ import * as apogee from "/apogeejs-model-lib/src/apogeeModelLib.js";
 import * as apogeeapp from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import * as apogeeui from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 import * as apogeeview from "/apogeejs-view-lib/src/apogeeViewLib.js";
-import {APOGEE_BUNDLE_PATH} from "./bundleVersion.js";
 
 __globals__.apogeeutil = apogeeutil;
 __globals__.apogeebase = apogeebase;
@@ -26,7 +25,7 @@ __globals__.apogeeUserConfirmSynchronous = (msg,okText,cancelText,defaultToOk) =
 
 //initialize resource path
 const INCLUDE_PATH_INFO = {
-    "resources": APOGEE_BUNDLE_PATH + "/resources",
-    "aceIncludes": APOGEE_BUNDLE_PATH + "/ace_includes"
+    "resources": "../apogeejs-app-bundle/src/resources",
+    "aceIncludes": "http://localhost:8888/apogeejs-admin/ext/ace/ace_1.4.3/ace_includes"
 };
 apogeeview.initIncludePath(INCLUDE_PATH_INFO);

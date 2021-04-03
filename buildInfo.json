@@ -1,62 +1,64 @@
 {
     "repoName": "apogeejs-web-runtime",
 
-    "esModule": {
-        "taskList": [
-            {
-                "type": "copyFileList",
-                "srcFileUrlList": [
-                    "/apogeejs-web-runtime/versionInfo.json",
-                    "/apogeejs-web-runtime/versionInfo.js"
-                ]
-            },
-            {
-                "type": "copyFileList",
-                "srcFileUrlList": [
-                    "/apogeejs-web-runtime/web/webTest.html",
-                    "/apogeejs-web-runtime/web/webAppTestWorkspace.json"
-                ],
-                "childFolder": "web"
-            },
-            {
-                "type": "copyAndReplace",
-                "srcFileUrl": "/apogeejs-web-runtime/src/bundleVersion.js",
-                "childFolder": "src",
-                "replacementList": [
-                    {
-                        "marker": "[APOGEE_BUNDLE_PATH]",
-                        "lib": "apogeejs-app-bundle",
-                        "type": "deployPath"
-                    }
-                ]
-            },
-            {
-                "type": "concatFileList",
-                "srcFileUrlList": [
-                    "/apogeejs-view-lib/style/apogeeapp.css",
-                    "/apogeejs-view-lib/style/ComponentDisplay.css",
-                    "/apogeejs-web-runtime/style/WebView.css",
-                    "/apogeejs-ui-lib/style/dialog.css",
-                    "/apogeejs-ui-lib/style/DisplayAndHeader.css",
-                    "/apogeejs-ui-lib/style/Menu.css",
-                    "/apogeejs-ui-lib/style/SplitPane.css",
-                    "/apogeejs-ui-lib/style/TabFrame.css",
-                    "/apogeejs-ui-lib/style/TreeControl.css",
-                    "/apogeejs-ui-lib/style/ConfigurablePanel.css",
-                    "/apogeejs-ui-lib/style/listElement.css",
-                    "/apogeejs-ui-lib/style/tooltip.css",    
-                    "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css"
-                ],
-                "destFileName": "apogeeWebRuntime.css",
-                "childFolder": "style"
-            },
-            {
-                "type": "packageLib",
-                "esModuleFileName": "apogeeWebRuntime.js",
-                "externalLibs": [
-                    "./bundleVersion.js"
-                ]
-            }
-        ]
-    }
+    "taskList": [
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-web-runtime/versionInfo.json",
+                "/apogeejs-web-runtime/versionInfo.js"
+            ]
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-web-runtime/web/webTest.html",
+                "/apogeejs-web-runtime/web/webAppTestWorkspace.json"
+            ],
+            "childFolder": "web"
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-ui-lib/resources/**/*",
+                "/apogeejs-app-bundle/resources/**/*"
+            ],
+            "childFolder": "apogeejs-app-bundle/resources"
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-model-lib/src/debugHook.js",
+                "/apogeejs-model-lib/src/webGlobals.js"
+            ],
+            "childFolder": "apogeejs-app-bundle/src"
+        },
+        {
+            "type": "concatFileList",
+            "srcFileUrlList": [
+                "/apogeejs-view-lib/style/apogeeapp.css",
+                "/apogeejs-view-lib/style/ComponentDisplay.css",
+                "/apogeejs-web-runtime/style/WebView.css",
+                "/apogeejs-ui-lib/style/dialog.css",
+                "/apogeejs-ui-lib/style/DisplayAndHeader.css",
+                "/apogeejs-ui-lib/style/Menu.css",
+                "/apogeejs-ui-lib/style/SplitPane.css",
+                "/apogeejs-ui-lib/style/TabFrame.css",
+                "/apogeejs-ui-lib/style/TreeControl.css",
+                "/apogeejs-ui-lib/style/ConfigurablePanel.css",
+                "/apogeejs-ui-lib/style/listElement.css",
+                "/apogeejs-ui-lib/style/tooltip.css",    
+                "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css"
+            ],
+            "destFileName": "apogeeWebRuntime.css",
+            "childFolder": "style"
+        },
+        {
+            "type": "packageLib",
+            "format": "es",
+            "sourceFileUrl": "/apogeejs-web-runtime/src/apogeeWebRuntime.js",
+            "outputFileName": "apogeeWebRuntime.js",
+            "childFolder": "src"
+        }
+    ]
 }

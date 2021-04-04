@@ -5,8 +5,13 @@
         {
             "type": "copyFileList",
             "srcFileUrlList": [
-                "/apogeejs-web-runtime/versionInfo.json",
-                "/apogeejs-web-runtime/versionInfo.js"
+                "/apogeejs-web-runtime/versionInfo.json"
+            ]
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-web-runtime/includePathInfo.js"
             ]
         },
         {
@@ -58,7 +63,10 @@
             "format": "es",
             "sourceFileUrl": "/apogeejs-web-runtime/src/apogeeWebRuntime.js",
             "outputFileName": "apogeeWebRuntime.js",
-            "childFolder": "src"
+            "childFolder": "src",
+            "externalLibMapping": {
+                "/apogeejs-web-runtime/includePathInfo.js": "../includePathInfo.js"
+            }
         }
     ]
 }

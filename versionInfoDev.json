@@ -1,0 +1,11 @@
+{
+    "repoName": "apogeejs-web-runtime",
+    "version": "2.0.0-pDEV",
+    "isProductionRelease": false,
+    "suppressReleasePresentCheck": false,
+    "buildInfoUrl": "/apogeejs-web-runtime/buildInfo.json",
+    "additionalValues": {
+        "RESOURCES_PATH": "http://localhost:8888/apogeejs-releases/releases-dev/apogeejs-web-runtime/v2.0.0-p1/apogeejs-app-bundle/src/resources",
+        "ACE_INCLUDES_PATH": "http://localhost:8888/apogeejs-admin/ext/ace/ace_1.4.3/ace_includes"
+    }
+}

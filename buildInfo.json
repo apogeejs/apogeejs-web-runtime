@@ -3,15 +3,19 @@
 
     "taskList": [
         {
-            "type": "copyFileList",
-            "srcFileUrlList": [
-                "/apogeejs-web-runtime/versionInfo.json"
-            ]
-        },
-        {
-            "type": "copyFileList",
-            "srcFileUrlList": [
-                "/apogeejs-web-runtime/includePathInfo.js"
+            "type": "copyAndReplace",
+            "srcFileUrl": "/apogeejs-web-runtime/includePathInfo.js",
+            "replacementList": [
+                {
+                    "marker": "[RESOURCES_PATH]",
+                    "valueName": "RESOURCES_PATH",
+                    "type": "additionalValue"
+                },
+                {
+                    "marker": "[ACE_INCLUDES_PATH]",
+                    "valueName": "ACE_INCLUDES_PATH",
+                    "type": "additionalValue"
+                }
             ]
         },
         {
@@ -41,18 +45,9 @@
         {
             "type": "concatFileList",
             "srcFileUrlList": [
-                "/apogeejs-view-lib/style/apogeeapp.css",
-                "/apogeejs-view-lib/style/ComponentDisplay.css",
-                "/apogeejs-web-runtime/style/WebView.css",
-                "/apogeejs-ui-lib/style/dialog.css",
-                "/apogeejs-ui-lib/style/DisplayAndHeader.css",
-                "/apogeejs-ui-lib/style/Menu.css",
-                "/apogeejs-ui-lib/style/SplitPane.css",
-                "/apogeejs-ui-lib/style/TabFrame.css",
-                "/apogeejs-ui-lib/style/TreeControl.css",
-                "/apogeejs-ui-lib/style/ConfigurablePanel.css",
-                "/apogeejs-ui-lib/style/listElement.css",
-                "/apogeejs-ui-lib/style/tooltip.css",    
+                "/apogeejs-view-lib/style/**/*",
+                "/apogeejs-web-runtime/style/**/*",
+                "/apogeejs-ui-lib/style/**/*",  
                 "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css"
             ],
             "destFileName": "apogeeWebRuntime.css",
@@ -65,7 +60,10 @@
             "outputFileName": "apogeeWebRuntime.js",
             "childFolder": "src",
             "externalLibMapping": {
-                "/apogeejs-web-runtime/includePathInfo.js": "../includePathInfo.js"
+                "/apogeejs-web-runtime/includePathInfo.js": "../includePathInfo.js",
+                "/apogeejs-admin/ext/esprima/esprima_2.7.3/esprima.es.js": "/apogeejs-admin/ext/esprima/esprima_2.7.3/esprima.es.js",
+                "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js": "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js",
+                "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.es.js": "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.es.js"
             }
         }
     ]

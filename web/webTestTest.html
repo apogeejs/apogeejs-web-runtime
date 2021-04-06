@@ -5,18 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/apogeeapp.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/componentdisplay/ComponentDisplay.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-web-runtime/src/componentdisplay/WebView.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/window/dialog.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/displayandheader/DisplayAndHeader.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/menu/Menu.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/splitpane/SplitPane.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tabframe/TabFrame.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tooltip/tooltip.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/treecontrol/TreeControl.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/configurablepanel/ConfigurablePanel.css">     
-        <link rel="stylesheet" type="text/css" href="/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/apogeeapp.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/ComponentDisplay.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-web-runtime/style/WebView.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/dialog.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/DisplayAndHeader.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/Menu.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/SplitPane.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TabFrame.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/tooltip.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TreeControl.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ConfigurablePanel.css">     
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ListElement.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-releases/releases/ext/handsontable/v6.2.0/handsontable.full.min.css">
 
         <style>
             body {
@@ -26,16 +27,14 @@
                 width: 600px;
             }
         </style>
-   
-        
         <script type="module">
-            import {ApogeeWebView} from "../src/webRuntimeLib.js";
+            import {ApogeeWebView} from "../src/apogeeWebRuntime.js";
         
             //configure app and load the workspace
             let workspaceUrl = "webAppTestWorkspace.json";
             let appView;
 
-			window.init = function() {
+            window.init = function() {
                 appView = new ApogeeWebView();
 
                 //this adds a display view to the page to the given element
@@ -45,22 +44,36 @@
 
                 //this adds a listener for creation or updated to a component
                 //should be done before workspace is loaded
-                let callback = component => alert("Demo of listener: " + component.getName() + " value updated!");
+                let callback = component => alert(component.getName() + " value updated!");
                 appView.addComponentListener("main.outputCell",callback);
 
                 appView.openWorkspace(workspaceUrl);
             }
-            
-		</script>
-	</head>
+        </script>
+    </head>
     <body onload="init()">
         <h1>Simple Example of Embedding a Apogee Workspace in a Web Page.</h1>
         <p>You can expose the display elements from an Apogee workspace in a web application. This page is very ugly but you can make it much prettier.</p>
 
-        <p>This is input cell:</p>
+        <p>This is the input cell:</p>
         <div class="cellViewContainer" id="inputDisplayElement"></div>
 
-        <p>This is output cell:</p>
+        <p>This is the output cell:</p>
         <div class="cellViewContainer" id="outputDisplayElement"></div>
-	</body>
+    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

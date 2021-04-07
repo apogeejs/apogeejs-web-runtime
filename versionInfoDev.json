@@ -6,6 +6,6 @@
     "buildInfoUrl": "/apogeejs-web-runtime/buildInfo.json",
     "additionalValues": {
         "RESOURCES_PATH": "http://localhost:8888/apogeejs-releases/releases-dev/apogeejs-web-runtime/v2.0.0-p1/apogeejs-app-bundle/src/resources",
-        "ACE_INCLUDES_PATH": "http://localhost:8888/apogeejs-admin/ext/ace/v1.4.3/ace_includes"
+        "ACE_INCLUDES_PATH": "http://localhost:8888/apogeejs-releases/releases/ext/ace/v1.4.12/ace_includes"
     }
 }

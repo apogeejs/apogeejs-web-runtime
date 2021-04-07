@@ -48,7 +48,7 @@
                 "/apogeejs-view-lib/style/**/*",
                 "/apogeejs-web-runtime/style/**/*",
                 "/apogeejs-ui-lib/style/**/*",  
-                "/apogeejs-releases/releases/ext/handsontable/v6.2.0/handsontable.full.min.css"
+                "/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.full.min.css"
             ],
             "destFileName": "apogeeWebRuntime.css",
             "childFolder": "style"
@@ -61,9 +61,9 @@
             "childFolder": "src",
             "externalLibMapping": {
                 "/apogeejs-web-runtime/includePathInfo.js": "../includePathInfo.js",
-                "/apogeejs-releases/releases/ext/esprima/v2.7.3/esprima.es.js": "/apogeejs-releases/releases/ext/esprima/v2.7.3/esprima.es.js",
-                "/apogeejs-releases/releases/ext/ace/v1.4.3/ace.es.js": "/apogeejs-releases/releases/ext/ace/v1.4.3/ace.es.js",
-                "/apogeejs-releases/releases/ext/handsontable/v6.2.0/handsontable.es.js": "/apogeejs-releases/releases/ext/handsontable/v6.2.0/handsontable.es.js"
+                "/apogeejs-releases/releases/ext/esprima/v4.0.1/esprima.es.js": "/apogeejs-releases/releases/ext/esprima/v4.0.1/esprima.es.js",
+                "/apogeejs-releases/releases/ext/ace/v1.4.12/ace.es.js": "/apogeejs-releases/releases/ext/ace/v1.4.12/ace.es.js",
+                "/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.es.js": "/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.es.js"
             }
         }
     ]

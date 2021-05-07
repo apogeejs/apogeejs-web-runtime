@@ -3,7 +3,6 @@ import {Apogee} from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import WebComponentDisplay from "/apogeejs-web-runtime/src/componentdisplay/WebComponentDisplay.js";
 import {getComponentViewClass,ERROR_COMPONENT_VIEW_CLASS} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {UiCommandMessenger} from "/apogeejs-view-lib/src/apogeeViewLib.js";
-import WebAppConfigManager from "/apogeejs-web-runtime/src/WebAppConfigManager.js";
 import {closeWorkspace} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 
 export default class ApogeeWebView {
@@ -14,7 +13,7 @@ export default class ApogeeWebView {
      * - appConfigManager - This is the app config managerm which defines some needed functionality. 
      */
     constructor() {
-        this.app = new Apogee(new WebAppConfigManager());
+        this.app = new Apogee();
 
         this.componentByNameMap = {};
         this.componentByIdMap = {};

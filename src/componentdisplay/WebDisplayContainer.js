@@ -223,15 +223,14 @@ export default class WebDisplayContainer {
     /** This method cleasr the data display. It should only be called when the data display is not showing. 
      * maybe allow this when the display is showing - unload and reload it*/
     reloadDisplay() {
-        //this destrpys the data display, not the container - bad name
-        this.destroy();
+        this.destroyDataDisplay();
 
         //reload display
         this.updateDataDisplayLoadedState();
     }
 
     /** This method destroys the data display. */
-    destroy() {
+    destroyDataDisplay() {
         if(this.dataDisplay) {
             if(this.dataDisplay.destroy) {
                 this.dataDisplay.destroy();

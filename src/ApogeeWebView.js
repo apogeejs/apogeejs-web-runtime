@@ -4,15 +4,19 @@ import WebComponentDisplay from "/apogeejs-web-runtime/src/componentdisplay/WebC
 import {getComponentViewClass,ERROR_COMPONENT_VIEW_CLASS} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {UiCommandMessenger} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {closeWorkspace} from "/apogeejs-view-lib/src/apogeeViewLib.js";
+import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
 
 export default class ApogeeWebView {
 
     /** This creates the app view, which in turn creates the contained app.
-     * - containerId - This is the DOM element ID in which the app view should be created. If this is set
-     * to null (or other false value) the UI will not be created.
-     * - appConfigManager - This is the app config managerm which defines some needed functionality. 
+     * If it is desired to _not_ make lodash a global variable, the argument "true" should be passed
+     * in for optionalSuporessLodash.
      */
-    constructor() {
+    constructor(optionalSupressLodash) {
+        if(!optionalSupressLodash) {
+            __globals__._ = apogeeutil._;
+        }
+
         this.app = new Apogee();
 
         this.componentByNameMap = {};

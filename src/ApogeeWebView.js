@@ -287,7 +287,7 @@ export default class ApogeeWebView {
             if(componentInfo.displayViews.length > 0) {
 
                 //create the component view
-                let componentViewClass = getComponentViewClass(component.constructor.uniqueName);
+                let componentViewClass = getComponentViewClass(component.constructor.getClassUniqueName());
                 let componentView;
                 if(componentViewClass) {
                     componentView = new componentViewClass(this,component);

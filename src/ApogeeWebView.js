@@ -1,7 +1,7 @@
 /** This replaces ApogeeView when running a client web application. */
 import {Apogee} from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import WebComponentDisplay from "/apogeejs-web-runtime/src/componentdisplay/WebComponentDisplay.js";
-import {getComponentViewClass,ERROR_COMPONENT_VIEW_CLASS} from "/apogeejs-view-lib/src/apogeeViewLib.js";
+import {getComponentViewInstance} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {UiCommandMessenger} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {closeWorkspace} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
@@ -287,16 +287,7 @@ export default class ApogeeWebView {
             if(componentInfo.displayViews.length > 0) {
 
                 //create the component view
-                let componentViewClass = getComponentViewClass(component.getComponentType());
-                let componentView;
-                if(componentViewClass) {
-                    componentView = new componentViewClass(this,component);
-                }
-
-                if(!componentView) {
-                    componentView = new ERROR_COMPONENT_VIEW_CLASS(this,component);
-                }
-
+                let componentView = getComponentViewInstance(this,component.getComponentType());
                 componentInfo.componentView = componentView;
 
                 //initialize the display views

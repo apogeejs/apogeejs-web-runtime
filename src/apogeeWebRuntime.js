@@ -10,7 +10,10 @@ import * as apogeeui from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 import * as apogeeview from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import includePathInfo from "/apogeejs-web-runtime/includePathInfo.js";
 
-__globals__._ = aogeeutil._;
+export {default as ApogeeWebView} from "/apogeejs-web-runtime/src/ApogeeWebView.js";
+
+//set lib globals (future - make these accessible through load module)
+//__globals__._ = aogeeutil._; - add this later, depending on whether or not the user does not supress it
 __globals__.apogeeutil = apogeeutil;
 __globals__.apogeebase = apogeebase;
 __globals__.apogee = apogee;
@@ -18,13 +21,18 @@ __globals__.apogeeapp = apogeeapp;
 __globals__.apogeeui = apogeeui;
 __globals__.apogeeview = apogeeview;
 
-export {default as ApogeeWebView} from "/apogeejs-web-runtime/src/ApogeeWebView.js";
+__globals__.addDataToModelGlobals("_",apogeeutil._,true); //use our version of lodash. Maybe we should give the user the option of replacing?
+__globals__.addNameToModelGlobals("apogeeutil",true);
 
 //implementation of global alert functions
 __globals__.apogeeLog = (msg) => console.log(message);
 __globals__.apogeeUserAlert = (msg) => apogeeui.showSimpleActionDialog(msg,null,["OK"]);
 __globals__.apogeeUserConfirm = (msg,okText,cancelText,okAction,cancelAction,defaultToOk) => apogeeui.showSimpleActionDialog(msg,null,[okText,cancelText],[okAction,cancelAction]);
 __globals__.apogeeUserConfirmSynchronous = (msg,okText,cancelText,defaultToOk) => confirm(msg);
+
+__globals__.addNameToModelGlobals("apogeeLog",true);
+__globals__.addNameToModelGlobals("apogeeUserAlert",true);
+__globals__.addNameToModelGlobals("apogeeUserConfirm",true);
 
 //initialize resource path
 apogeeview.initIncludePath(includePathInfo);

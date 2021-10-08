@@ -23,6 +23,11 @@ __globals__.apogeeview = apogeeview;
 
 __globals__.addDataToModelGlobals("_",apogeeutil._,true); //use our version of lodash. Maybe we should give the user the option of replacing?
 __globals__.addNameToModelGlobals("apogeeutil",true);
+__globals__.addNameToModelGlobals("apogeebase",true);
+__globals__.addNameToModelGlobals("apogee",true);
+__globals__.addNameToModelGlobals("apogeeapp",true);
+__globals__.addNameToModelGlobals("apogeeui",true);
+__globals__.addNameToModelGlobals("apogeeview",true);
 
 //implementation of global alert functions
 __globals__.apogeeLog = (msg) => console.log(message);

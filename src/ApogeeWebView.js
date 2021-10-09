@@ -2,7 +2,7 @@
 import {Apogee} from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import WebComponentDisplay from "/apogeejs-web-runtime/src/componentdisplay/WebComponentDisplay.js";
 import {getComponentViewInstance} from "/apogeejs-view-lib/src/apogeeViewLib.js";
-import {UiCommandMessenger} from "/apogeejs-view-lib/src/apogeeViewLib.js";
+import {Messenger} from "/apogeejs-model-lib/src/apogeeModelLib.js";
 import {closeWorkspace} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
 
@@ -57,9 +57,9 @@ export default class ApogeeWebView {
 
     /** This method returns a command messenger. The send a command to a member using this
      * command messenger, the members complete name must be used. */
-    getCommandMessenger() {
+    getMessenger() {
         let model = this.app.getModel();
-        return new UiCommandMessenger(this,model.getId());
+        return new Messenger(model.getRunContextLink(),model.getId());
     }
 
     //=======================================

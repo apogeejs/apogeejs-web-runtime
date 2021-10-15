@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/apogeeapp.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/ComponentDisplay.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-web-runtime/style/WebView.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/dialog.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/DisplayAndHeader.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/Menu.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/SplitPane.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TabFrame.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/tooltip.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TreeControl.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ConfigurablePanel.css">     
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ListElement.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.full.min.css">
+
+        <style>
+            body {
+                padding: 10px;
+            }
+            .cellViewContainer {
+                width: 600px;
+            }
+        </style>
+        <script type="module">
+            import {ApogeeWebView} from "../src/apogeeWebRuntime.js";
+        
+            //configure app and load the workspace
+            let workspaceUrl = "multiTestWorkspace.json";
+            let appView;
+
+            window.init = function() {
+                appView = new ApogeeWebView();
+
+                //this adds a display view to the page to the given element
+                //should be done before the workspace is loaded.
+                appView.addDisplay("main.test.loginForm","inputDisplayElement",true,"Form");
+                appView.addDisplay("main.test.sessionToken","outputDisplayElement",true,"Data");
+
+                appView.openWorkspace(workspaceUrl);
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h1>Simple Multi Component Example of Embedding a Apogee Workspace in a Web Page.</h1>
+        <p>This loads a multi component - but it does not do it correctly. Fix that!</p>
+
+        <p>This is the input cell:</p>
+        <div class="cellViewContainer" id="inputDisplayElement"></div>
+
+        <p>This is the output cell:</p>
+        <div class="cellViewContainer" id="outputDisplayElement"></div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

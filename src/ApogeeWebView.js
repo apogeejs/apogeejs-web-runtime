@@ -1,9 +1,8 @@
 /** This replaces ApogeeView when running a client web application. */
 import {Apogee} from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import WebComponentDisplay from "/apogeejs-web-runtime/src/componentdisplay/WebComponentDisplay.js";
-import {getComponentViewInstance} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import {Messenger} from "/apogeejs-model-lib/src/apogeeModelLib.js";
-import {closeWorkspace} from "/apogeejs-view-lib/src/apogeeViewLib.js";
+import {closeWorkspace, ComponentView} from "/apogeejs-view-lib/src/apogeeViewLib.js";
 import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
 
 export default class ApogeeWebView {
@@ -287,8 +286,8 @@ export default class ApogeeWebView {
             if(componentInfo.displayViews.length > 0) {
 
                 //create the component view
-                let componentView = getComponentViewInstance(this,component);
-                componentInfo.componentView = componentView;
+                //this only works for child components (cells)          
+                componentInfo.componentView = new ComponentView(appViewInterface,component);
 
                 //initialize the display views
                 componentInfo.displayViews.forEach( displayViewInfo => {

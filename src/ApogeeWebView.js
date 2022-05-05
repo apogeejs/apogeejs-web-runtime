@@ -285,9 +285,9 @@ export default class ApogeeWebView {
             //create the component view if we have registered for any displays.
             if(componentInfo.displayViews.length > 0) {
 
-                //create the component view
-                //this only works for child components (cells)          
-                componentInfo.componentView = new ComponentView(appViewInterface,component);
+                // //create the component view
+                // //this only works for child components (cells)          
+                // componentInfo.componentView = new ComponentView(appViewInterface,component);
 
                 //initialize the display views
                 componentInfo.displayViews.forEach( displayViewInfo => {

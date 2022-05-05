@@ -30,6 +30,7 @@
             "type": "copyFileList",
             "srcFileUrlList": [
                 "/apogeejs-ui-lib/resources/**/*",
+                "/apogeejs-app-lib/resources/**/*",
                 "/apogeejs-app-bundle/resources/**/*"
             ],
             "childFolder": "apogeejs-app-bundle/resources"
@@ -45,7 +46,7 @@
         {
             "type": "concatFileList",
             "srcFileUrlList": [
-                "/apogeejs-view-lib/style/**/*",
+                "/apogeejs-app-lib/style/**/*",
                 "/apogeejs-web-runtime/style/**/*",
                 "/apogeejs-ui-lib/style/**/*",  
                 "/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.full.min.css"

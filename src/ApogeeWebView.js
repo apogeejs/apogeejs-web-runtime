@@ -260,7 +260,6 @@ export default class ApogeeWebView {
         //for now I clear all here and then resubscribe to events here and in the app, since those
         //objects live on.
         this.app.clearListenersAndHandlers();
-        this.app.subscribeToAppEvents();
         this._subscribeToAppEvents();
     }
 
